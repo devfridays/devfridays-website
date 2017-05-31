@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Relative or absolute URL where all assets are served from
+$base-url: '/assets/' !default;
+
+/// Container's maximum width
+$max-width: 1200px !default;
+
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+/// Regular font family
+$font-base-text: 'Raleway', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+// $code-font-stack: 'Inconsolata', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Pallet Colors
+$color-base-main: #3d324b;
+$color-base-alter: #f6d282;
+$color-purple-light: #b68be8;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #464646;
