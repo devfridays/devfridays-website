@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains all Styles to container component.
+//
+.main-container {
+  display: flex;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
