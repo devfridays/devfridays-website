@@ -67,8 +67,8 @@
   font-family: $font-base-title;
   font-size: px-to-rem(16px);
   font-weight: 700;
-  margin: px-to-rem(5px) 0;
-  padding: px-to-rem(10px) px-to-rem(5px);
+  margin: px-to-rem($base-margin) 0;
+  padding: px-to-rem($base-padding / 2) px-to-rem($base-padding);
   text-decoration: none;
   transition: background $base-transition-time ease;
 

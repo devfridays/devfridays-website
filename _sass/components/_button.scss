@@ -3,4 +3,13 @@
 //
 .bt-primary {
   @include createButton($color-base-main, $color-white);
+
+  &--white {
+    background-color: $color-white;
+    color: $color-base-main;
+
+    @include on-event(){
+      background-color: darken($color-white, 5%);
+    }
+  }
 }

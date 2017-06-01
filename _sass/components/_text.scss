@@ -7,9 +7,17 @@
   font-size: px-to-rem(52px);
   margin-bottom: $base-margin / 2;
   padding-bottom: $base-margin / 2;
+
+  &--white {
+    color: $color-white
+  }
 }
 
 .text-section {
   color: $color-gray;
   font-size: px-to-rem(16px);
+
+  &--white {
+    color: $color-white
+  }
 }
