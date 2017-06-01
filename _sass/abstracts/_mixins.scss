@@ -32,3 +32,26 @@
   }
 }
 
+/// Create divisor diagonal
+/// @author William Goulart
+/// @param {String} $direction
+// Usage @include section-divisor(blue, 'r', 2, 7);
+/// @include section-divisor(blue, $direction == false , z-idex: 2, -7deg);
+@mixin section-divisor($bg: #fefefe, $direction: 'left', $z: 0, $deg: 2) {
+  content: '';
+  position: absolute;
+  left: -5em;
+  width: 120%;
+  height: 22em;
+  background: $bg;
+  z-index: $z;
+
+  @if $direction == 'left' {
+    bottom: -17.7em;
+    transform: rotate($deg + deg);
+  }
+  @else {
+    bottom: -16.7em;
+    transform: rotate(-($deg + deg));
+  }
+}
