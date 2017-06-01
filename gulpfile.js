@@ -4,7 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 
 // Start Static Server with browserSync
-gulp.task('server', function() {
+gulp.task('server', ['sass'], function() {
     browserSync({
         server: {
             baseDir: "./"
