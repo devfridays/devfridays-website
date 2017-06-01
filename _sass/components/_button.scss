@@ -1,0 +1,6 @@
+// -----------------------------------------------------------------------------
+// This file contains all Styles to button component.
+//
+.bt-primary {
+  @include createButton($color-base-main, $color-white);
+}

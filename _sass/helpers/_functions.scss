@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass Functions.
+// -----------------------------------------------------------------------------
+
+/// px-to-rem
+@function px-to-rem($size-px) {
+  @return $size-px / ($size-px * 0 + 1) + rem;
+}
+
+/// Calculate propotion for image
+@function padding-proportion($w-value, $h-value) {
+  @return ($h-value / $w-value) * 100%;
+}

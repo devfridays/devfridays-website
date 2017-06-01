@@ -1,3 +1,17 @@
 // -----------------------------------------------------------------------------
 // This file contains all typography styles.
 // -----------------------------------------------------------------------------
+html,
+input,
+select,
+textarea {
+  font-family: $font-base-text;
+}
+
+strong {
+	font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}

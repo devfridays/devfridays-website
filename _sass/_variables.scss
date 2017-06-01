@@ -8,17 +8,17 @@ $base-url: '/assets/' !default;
 /// Container's maximum width
 $max-width: 1200px !default;
 
+/// Paddings & Margins
+$base-padding: 20px;
+$base-padding: 30px;
+$base-transition-time: .3s;
+
+/// Breakpoint Size
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
+  'small': 480px,
+  'medium': 720px,
+  'large': 1120px,
 ) !default;
-
-/// Regular font family
-$font-base-text: 'Raleway', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
-
-/// Code (monospace) font family
-// $code-font-stack: 'Inconsolata', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
 /// Pallet Colors
 $color-base-main: #3d324b;
@@ -27,3 +27,10 @@ $color-purple-light: #b68be8;
 $color-white: #ffffff;
 $color-black: #000000;
 $color-gray: #464646;
+
+/// Regular font family
+$font-base-title: 'Raleway', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$font-base-text: 'Open Sans','Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+// $code-font-stack: 'Inconsolata', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
