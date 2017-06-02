@@ -18,3 +18,23 @@
 .half-container {
   width: 50%;
 }
+
+.half-container {
+  width: 50%;
+}
+
+/*
+*  Sections
+*/
+.about {
+  background-color: $color-white;
+}
+.event {
+  background-color: $color-base-alter;
+}
+.project {
+  background-color: $color-base-main;
+}
+.footer {
+  background-color: $color-gray;
+}
