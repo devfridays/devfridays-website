@@ -2,6 +2,7 @@
 // This file contains all Styles to container component.
 //
 .main-container {
+  position: relative;
   display: flex;
   max-width: $max-width;
   margin-left: auto;
@@ -11,24 +12,9 @@
   padding-right: $base-padding;
   padding-top: $base-padding * 3;
   width: 100%;
+  z-index: 999;
 }
 
 .half-container {
   width: 50%;
-}
-
-/*
-*  Sections
-*/
-.about {
-  background-color: $color-white;
-}
-.event {
-  background-color: $color-base-alter;
-}
-.project {
-  background-color: $color-base-main;
-}
-.footer {
-  background-color: $color-gray;
 }

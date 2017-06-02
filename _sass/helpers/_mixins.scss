@@ -59,9 +59,9 @@
 /// Create button
 /// @author William Goulart
 /// @param {String} $color
-@mixin createButton($background, $color-text) {
+@mixin createButton($background, $color-text, $radius: 3px) {
   background: $background;
-  border-radius: px-to-rem(3px);
+  border-radius: px-to-rem($radius);
   color: $color-text;
   display: inline-block;
   font-family: $font-base-title;

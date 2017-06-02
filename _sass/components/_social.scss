@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all Styles to social network component.
+//
+.social {
+  display: flex;
+  width: 200px;
+  flex: 0 1;
+  justify-content: space-between;
+  margin-right: auto;
+
+  &__link {
+    color: $color-white;
+    flex: 0 4;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 20px;
+  }
+
+  &__image {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains footer styles.
+// -----------------------------------------------------------------------------
+.footer {
+  position: relative;
+  background-color: $color-gray;
+
+  .main-container {
+    padding: $base-padding;
+  }
+}
+
+/* contact-us */
+.contact-us {
+  margin-left: auto;
+  align-self: center;
+}
