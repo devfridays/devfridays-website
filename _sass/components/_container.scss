@@ -6,7 +6,29 @@
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-bottom: $base-padding * 3;
+  padding-left: $base-padding;
+  padding-right: $base-padding;
+  padding-top: $base-padding * 3;
   width: 100%;
+}
+
+.half-container {
+  width: 50%;
+}
+
+/*
+*  Sections
+*/
+.about {
+  background-color: $color-white;
+}
+.event {
+  background-color: $color-base-alter;
+}
+.project {
+  background-color: $color-base-main;
+}
+.footer {
+  background-color: $color-gray;
 }

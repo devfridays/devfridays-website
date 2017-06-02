@@ -2,9 +2,9 @@
 // This file contains all application-wide Sass Functions.
 // -----------------------------------------------------------------------------
 
-/// px-to-rem
+/// Clean PX & converter to REM 
 @function px-to-rem($size-px) {
-  @return $size-px / ($size-px * 0 + 1) + rem;
+  @return ($size-px / ($size-px * 0 + 1)) / 16 * 1rem;
 }
 
 /// Calculate propotion for image

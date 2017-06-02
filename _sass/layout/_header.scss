@@ -2,4 +2,27 @@
 // This file contains headers styles.
 // -----------------------------------------------------------------------------
 .header {
+  position: relative;
+  background-color: $color-base-main;
+  background-image: url($base-url + 'images/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*
+* Logo
+*/
+.logo {
+  display: block;
+  width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+  }
 }
