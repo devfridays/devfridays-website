@@ -12,6 +12,12 @@
 
 /* contact-us */
 .contact-us {
-  margin-left: auto;
   align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include when-inside('medium') {
+      margin-left: auto;
+      margin-right: none;
+  }
 }

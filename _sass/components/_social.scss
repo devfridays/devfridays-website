@@ -7,6 +7,8 @@
   flex: 0 1;
   justify-content: space-between;
   margin-right: auto;
+  margin-left: auto;
+  margin-bottom: $base-padding;
 
   &__link {
     color: $color-white;
@@ -19,5 +21,10 @@
   &__image {
     width: 20px;
     height: 20px;
+  }
+
+  @include when-inside('medium') {
+      margin-left: none;
+      margin-right: none;
   }
 }
