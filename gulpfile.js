@@ -1,10 +1,11 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
-var merge = require('merge-stream');
-var imagemin = require('gulp-imagemin');
-var ghPages = require('gulp-gh-pages');
+var gulp           = require('gulp');
+var browserSync    = require('browser-sync');
+var sass           = require('gulp-sass');
+var prefix         = require('gulp-autoprefixer');
+var merge          = require('merge-stream');
+var imagemin       = require('gulp-imagemin');
+var ghPages        = require('gulp-gh-pages');
+var del            = require('del');
 
 // Start Static Server with browserSync
 gulp.task('server', ['sass'], function() {
@@ -36,7 +37,7 @@ gulp.task('watch', function() {
     gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
-// Task to build to dist
+// Task to build to dist folder
 gulp.task('build', () => {
     const task = () => {
         let markup = gulp.src('*.html')
@@ -58,6 +59,11 @@ gulp.task('build', () => {
     task();
 });
 
+// Task Delete dist folder
+gulp.task('clean:dist', function () {
+  return del('./dist');
+});
+
 // Deploy build dist to branch gh-pages
 gulp.task('gh-pages', function() {
     return gulp.src('./dist/**/*')
@@ -70,4 +76,4 @@ gulp.task('gh-pages', function() {
 gulp.task('deploy', ['build', 'gh-pages']);
 
 // Default task, running just `gulp`
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['clean:dist', 'server', 'watch']);
