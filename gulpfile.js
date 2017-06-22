@@ -76,4 +76,4 @@ gulp.task('gh-pages', function() {
 gulp.task('deploy', ['build', 'gh-pages']);
 
 // Default task, running just `gulp`
-gulp.task('default', ['clean:dist', 'server', 'watch']);
+gulp.task('default', ['clean:dist', 'build', 'server', 'watch']);
