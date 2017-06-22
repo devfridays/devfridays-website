@@ -49,7 +49,10 @@ gulp.task('build', () => {
             .pipe(imagemin())
             .pipe(gulp.dest('dist/images/'));
 
-        return merge(markup, styles, images);
+        let cname = gulp.src('./CNAME')
+                .pipe(gulp.dest('dist/'));
+
+        return merge(markup, styles, images, cname);
     }
 
     task();
