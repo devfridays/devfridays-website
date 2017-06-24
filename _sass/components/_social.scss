@@ -24,7 +24,6 @@
   }
 
   @include when-inside('medium') {
-      margin-left: none;
-      margin-right: none;
+      margin: 0;
   }
 }
