@@ -9,7 +9,7 @@ var del            = require('del');
 var runSequence    = require('run-sequence');
 
 // Start Static Server with browserSync
-gulp.task('server', ['sass'], function() {
+gulp.task('server', ['sass'], () => {
     browserSync({
         server: {
             baseDir: "dist/"
@@ -18,7 +18,7 @@ gulp.task('server', ['sass'], function() {
 });
 
 // Watch SCSS files for changes, recompile, compress, autoprefixed
-gulp.task('sass', function() {
+gulp.task('sass', () =>{
     return gulp.src('./_sass/main.scss')
         .pipe(sass({
             outputStyle: 'compressed'
@@ -32,22 +32,23 @@ gulp.task('sass', function() {
         }));
 });
 
-gulp.task('reload', function(){
+// Task for Reload BrowserSync
+gulp.task('reload', () => {
     browserSync.reload();
 });
 
 // Watch SCSS & HTML files, run reload BrowserSync
-gulp.task('watch', function() {
+gulp.task('watch', () => {
     gulp.watch('./_sass/**/*.scss', ['sass']);
     gulp.watch("./*.html", ['dist-html','reload']);
 }); 
 
+//Granular changes
 gulp.task('dist-html', () => {
     del('./dist/*.html');
-    console.log('Deleted-Dist html');
-    gulp.src('./*.html')
-        .pipe(gulp.dest('./dist/'));
+    gulp.src('./*.html').pipe(gulp.dest('./dist/'));
 });
+
 
 // Task to build to dist folder
 gulp.task('build', () => {
@@ -71,15 +72,11 @@ gulp.task('build', () => {
     task();
 });
 
-// gulp.task('build', gulp.series('clean', 'coffee'))
-
 // Task Delete dist folder
-gulp.task('clean:dist', function () {
-  return del('./dist');
-});
+gulp.task('clean:dist', () => del('./dist'));
 
 // Deploy build dist to branch gh-pages
-gulp.task('gh-pages', function() {
+gulp.task('gh-pages', () => {
     return gulp.src('./dist/**/*')
         .pipe(ghPages({
             force: true
@@ -90,8 +87,4 @@ gulp.task('gh-pages', function() {
 gulp.task('deploy', ['build', 'gh-pages']);
 
 // Default task, running just `gulp`
-gulp.task('default', function(){
-  return runSequence('clean:dist', 'build', 'server', 'watch')
-});
-
-// gulp.series('clean:dist', 'build', 'server', 'watch'));
+gulp.task('default', runSequence('clean:dist', 'build', 'server', 'watch'));
