@@ -82,7 +82,7 @@ gulp.task('clean:dist', () => del('./dist'));
 
 // Deploy build dist to branch gh-pages
 gulp.task('gh-pages', () => {
-    return gulp.src('./dist/**/*')
+    gulp.src('./dist/**/*')
         .pipe(ghPages({
             force: true
         }));
@@ -92,4 +92,4 @@ gulp.task('gh-pages', () => {
 gulp.task('deploy', ['build', 'gh-pages']);
 
 // Default task, running just `gulp`
-gulp.task('default', runSequence('clean:dist', 'build', 'server', 'watch'));
+gulp.task('default', () => runSequence('clean:dist', 'build', 'server', 'watch'));
