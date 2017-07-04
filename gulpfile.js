@@ -9,7 +9,7 @@ var del            = require('del');
 var runSequence    = require('run-sequence');
 
 // Start Static Server with browserSync
-gulp.task('server', ['sass'], () => {
+gulp.task('server', () => {
     browserSync({
         server: {
             baseDir: "dist/"
@@ -39,16 +39,21 @@ gulp.task('reload', () => {
 
 // Watch SCSS & HTML files, run reload BrowserSync
 gulp.task('watch', () => {
-    gulp.watch('./_sass/**/*.scss', ['sass']);
+    gulp.watch('./_sass/**/*.scss', ['sass', 'dist-css', 'reload']);
     gulp.watch("./*.html", ['dist-html','reload']);
 }); 
 
-//Granular changes
+//Recreate dist/*.html 
 gulp.task('dist-html', () => {
     del('./dist/*.html');
     gulp.src('./*.html').pipe(gulp.dest('./dist/'));
 });
 
+//Recreate /dist/assets/css/main.css 
+gulp.task('dist-css', () => {
+    del('./dist/assets/css/main.css');
+    gulp.src('assets/css/main.css').pipe(gulp.dest('dist/assets/css/'));
+});
 
 // Task to build to dist folder
 gulp.task('build', () => {
