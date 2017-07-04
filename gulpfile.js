@@ -6,6 +6,7 @@ var merge          = require('merge-stream');
 var imagemin       = require('gulp-imagemin');
 var ghPages        = require('gulp-gh-pages');
 var del            = require('del');
+var runSequence    = require('run-sequence');
 
 // Start Static Server with browserSync
 gulp.task('server', ['sass'], function() {
@@ -31,10 +32,21 @@ gulp.task('sass', function() {
         }));
 });
 
+gulp.task('reload', function(){
+    browserSync.reload();
+});
+
 // Watch SCSS & HTML files, run reload BrowserSync
 gulp.task('watch', function() {
     gulp.watch('./_sass/**/*.scss', ['sass']);
-    gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./*.html", ['dist-html','reload']);
+}); 
+
+gulp.task('dist-html', () => {
+    del('./dist/*.html');
+    console.log('Deleted-Dist html');
+    gulp.src('./*.html')
+        .pipe(gulp.dest('./dist/'));
 });
 
 // Task to build to dist folder
@@ -44,11 +56,11 @@ gulp.task('build', () => {
             .pipe(gulp.dest('dist/'));
 
         let styles = gulp.src('assets/css/main.css')
-            .pipe(gulp.dest('dist/css/'));
+            .pipe(gulp.dest('dist/assets/css/'));
 
         let images = gulp.src('assets/images/**/')
             .pipe(imagemin())
-            .pipe(gulp.dest('dist/images/'));
+            .pipe(gulp.dest('dist/assets/images/'));    
 
         let cname = gulp.src('./CNAME')
                 .pipe(gulp.dest('dist/'));
@@ -58,6 +70,8 @@ gulp.task('build', () => {
 
     task();
 });
+
+// gulp.task('build', gulp.series('clean', 'coffee'))
 
 // Task Delete dist folder
 gulp.task('clean:dist', function () {
@@ -76,4 +90,8 @@ gulp.task('gh-pages', function() {
 gulp.task('deploy', ['build', 'gh-pages']);
 
 // Default task, running just `gulp`
-gulp.task('default', ['clean:dist', 'build', 'server', 'watch']);
+gulp.task('default', function(){
+  return runSequence('clean:dist', 'build', 'server', 'watch')
+});
+
+// gulp.series('clean:dist', 'build', 'server', 'watch'));
