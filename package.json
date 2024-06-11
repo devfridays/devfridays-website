@@ -27,7 +27,7 @@
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-imagemin": "^9.1.0",
+    "gulp-imagemin": "^6.2.0",
     "gulp-sass": "^5.1.0",
     "merge-stream": "^2.0.0",
     "run-sequence": "^2.2.1"
